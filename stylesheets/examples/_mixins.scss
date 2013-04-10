@@ -1,0 +1,24 @@
+//////////////////////////////
+//// Mixins
+//////////////////////////////
+
+// Mixins do not return values, but instead print out CSS.
+// Anything within the mixin will be printed out just like if it were added to
+// the Sass file itself.
+@mixin right-to-left() {
+  html[dir="rtl"] & {
+    @content;
+  }
+}
+
+// Mixins can also have paramaters when they are set up.
+@mixin example-create-button($color) {
+  padding: 1em 3em;
+  margin: .5em 1em;
+  cursor: pointer;
+  color: $color;
+
+  // Other functions or mixins can also be called within a mix.
+  border: 2px solid darker-color($color);
+  @include border-radius(5px);
+}

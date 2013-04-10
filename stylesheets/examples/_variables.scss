@@ -1,0 +1,41 @@
+//////////////////////////////
+//// Variables
+//////////////////////////////
+
+// Declare a variable by having the $variable_name followed by a colon. For
+// variables within your extension, you also want to add '!default' before the
+// semicolon. This will only set the variable if it has not been set already.
+$foo          : 'bar'     !default;
+$default-add  : 2         !default;
+
+// There are several types of variables within Sass. Each has their own use.
+
+// Numbers simple decimal numbers, with or without units attached to them.
+$number       : 1.5       !default;
+$number-unit  : 2.2em     !default;
+
+// Strings of text can have quotes or not.
+$string-1     : foo       !default;
+$string-2     : 'bar'     !default;
+$string-3     : "gold"    !default;
+
+// Colors are set with either a string keyword, the Hex code or RGBA value.
+$color-1      : red                     !default;
+$color-2      : #66B360                 !default;
+$color-3      : rgba(255, 255, 0, 0.75) !default;
+
+// Booleans are just true, or false.
+$true         : true                    !default;
+$false        : false                   !default;
+
+// Variables can also be set to null.
+$null         : null                    !default;
+
+// Lists are any of the previous variables within a comma-seperated or spaced
+// list. They can be used for multiple values, or font families.
+$list-space   : 1em 2em 3em 4em         !default;
+$list-comma   : Arial, Helvetica, "Nimbus Sans L", sans-serif   !default;
+
+// A list can also have a list inside it:
+$list-list    : "type-1" 1em 2em,
+                "type-2" 3em 4em        !default;

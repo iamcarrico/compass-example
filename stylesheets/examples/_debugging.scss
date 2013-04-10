@@ -1,0 +1,28 @@
+//////////////////////////////
+//// Debugging
+//////////////////////////////
+
+// Warnings can be set within code in case the user is using incorrect syntax.
+// The Sass file will still compile, this is just a warning to alert the user of
+// their deeds.
+@function display-warning-message($do_it: TRUE) {
+  @if ($do_it) {
+    // We use the @warn directive to display a message when the file compiles.
+    @warn "This is an example warning message";
+  }
+  @else {
+    @warn "Why you no want?";
+  }
+
+  @return $do_it;
+}
+
+// Debug messages can be set using the @debug directive, similar to @warn.
+@function display-debug-message($example_value: FALSE) {
+  @if ($example_value) {
+    // The value has been set, let's put it into a debug message.
+    @debug "The value sent to this function is: " $example_value;
+  }
+
+  @return $example_value;
+}

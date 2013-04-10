@@ -1,0 +1,55 @@
+//////////////////////////////
+//// Logic / Control Directives
+//////////////////////////////
+
+
+// Basic logic can be added into a function and mixin.
+@function is-it-bigger-than-5($variable) {
+  // @if can be added in to check the truthiness.
+  @if ($variable > 5) {
+    @return TRUE;
+  } // An if can be extended with a @else if.
+  @else if (type-of($variable) != 'number') { // type-of can be used to determine the type of a variable.
+    @return null;
+  } // Finally, @else can be used if no if's are true.
+  @else {
+    @return FALSE;
+  }
+}
+
+// For loops can be created to go through a number of items.
+@mixin example-for-loop() {
+  // @for $variable_name from {starting number} through {ending number}.
+  @for $i from 8 through 10 {
+    // To include a varible within a string, wrap it in #{$variable}
+    .item-#{$i} {
+      -foo: $i;
+    }
+  }
+}
+
+// @each can be used to itterate over a list variable.
+@function is-there-a-number-in-my-list($list) {
+  @if (type-of($list) != 'list') {
+    @return FALSE;
+  }
+
+  // @each $list-item-variable in $list-variable.
+  @each $item in $list {
+     @if (type-of($item) == 'number') {
+      @return TRUE;
+    }
+  }
+
+  @return FALSE;
+}
+
+// @while can be used to itterate until the expression is false.
+@mixin lets-get-it-to-zero($number: 5) {
+  @while $number > 0 {
+    .while-loop-#{$number} {
+      -bar: 100% / $number;
+    }
+    $number: $number - 1;
+  }
+}

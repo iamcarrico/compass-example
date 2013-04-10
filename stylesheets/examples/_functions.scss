@@ -1,0 +1,21 @@
+//////////////////////////////
+//// Functions
+//////////////////////////////
+
+// Function are similar to functions in other languages. They perform some sort
+// of mathematical or logical computation, and return a value.
+
+// Functions begin with an @function then the function name.
+@function darker-color($color) { // Each input variable must be assigned within the parentheses.
+  // All functions must have an @return directive with a final value.
+  @return darken($color, 20%);
+}
+
+// A default value may be selected by adding either a variable or value.
+@function addition-example(
+  $first: 5,
+  $second : $default-add
+) {
+
+  @return $first + $second;
+}
